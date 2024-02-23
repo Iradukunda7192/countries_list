@@ -1,0 +1,54 @@
+
+<!-- my_template.html -->
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Data</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+
+</head>
+<title>
+    this is the my first app
+</title>
+<body>
+
+    
+    <div class="top-bar">
+    
+      <a href="#">Home</a>
+      <a href="#">Contact</a>
+      <a href="#">Location</a>
+      <a href="#">Next</a>
+         <form action="#" method="get">
+                <input type="text" name="search" placeholder="Search...">
+                <button type="submit">Search</button>
+          </form>
+    </div>
+    <div>
+        <h1>Welcome to Your Website</h1>
+     
+      
+        
+           
+    </ul>
+</div>
+      <div>
+    <h1>List of Countries</h1>
+    <ul>
+        {% for country in countries %}
+            <li>
+                <h2>{{ country.name }}</h2>
+                <p>Capital: {{ country.capital }}</p>
+                <p>Population: {{ country.population }}</p>
+                <p>flag: {{ country.flag }}</p>
+                <p>name: {{ country.name }}</p>
+                <!-- Add other fields as needed -->
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

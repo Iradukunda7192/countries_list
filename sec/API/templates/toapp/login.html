@@ -1,0 +1,63 @@
+<!-- my_template.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <!-- Link to your CSS file -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Data</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <!-- Other navigation links -->
+            <li><a href="{% url 'admin:index' %}">Admin</a></li>
+        </ul>
+    </nav>
+    <h1>country data </h1>
+    <div class="top-bar">
+    
+      <a href="#">Home</a>
+      <a href="#">Contact</a>
+      <a href="#">Location</a>
+      <a href="#">Next</a>
+         <form action="#" method="get">
+                <input type="text" name="search" placeholder="Search...">
+                <button type="submit">Search</button>
+          </form>
+    </div>
+    <div>
+        <h1>Welcome to Your Website</h1>
+        <!-- Other content -->
+    </div>
+    <div class="background-image-container">
+    <ul class="country-list">
+        {% for country in countries_data %}
+        <li>
+            <span class="flag-icon">
+                <!-- Add flag icon -->
+                {% if country.flag %}
+                    
+                    <img src="{% static 'online.jpg.jpg' %}" alt="{{ country.name.common }}">
+
+                {% endif %}
+            </span>
+            <span class="country-name">{{ country.name.common }}</span>
+            <span class="official-name">{{ country.name.official }}</span>
+            <span class="official-name">{{country.name.capitalcity}}</span>
+            <span class="native-names">
+                <!-- Display native names -->
+                {% for lang, names in country.name.nativeName.items %}
+                    <span>{{ names.common }} ({{ lang }})</span>
+                {% endfor %}
+            </span>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>

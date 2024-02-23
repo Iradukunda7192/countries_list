@@ -1,0 +1,66 @@
+/* static/css/styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: hsla(0, 16%, 60%, 0.63);
+    margin: 0;
+    padding: 0;
+    background-image: url('{% static "C:\Users\elysee\Desktop\django_project\sec\static\online.jpg.jpg" %}');
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
+}
+
+.country-list {
+    list-style-type: none;
+    padding: 0;
+}
+ /* Basic CSS styling for the top bar */
+ .top-bar {
+    background-color: rgba(211, 191, 191, 0.863);
+    color: rgba(221, 211, 211, 0.87);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar a {
+    color: rgb(131, 110, 110);
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.top-bar input[type="text"] {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.country-list li {
+    background-color: #ecdfdf;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(196, 177, 177, 0.842);
+}
+
+.flag-icon img {
+    width: 180px;
+    height: 180px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.country-name {
+    font-weight: bold;
+}
+
+.background-image-container {
+    width: 100%; /* Adjust width as needed */
+    height: 300px; /* Adjust height as needed */
+    background-image: url('C:\Users\elysee\Desktop\django_project\sec\static\online.jpg.jpg'); /* Specify the path to your image */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+  }
+  

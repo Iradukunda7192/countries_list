@@ -1,0 +1,25 @@
+<!-- my_template.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the list of countries_data</title>
+</head>
+<body>
+    <h1>country data </h1>
+    <ul>
+        {% for country in countries_data %}
+        <li>
+            <strong>Common Name:</strong> {{ country.name.common }}<br>
+            <strong>Official Name:</strong> {{ country.name.official }}<br>
+            <strong>Native Names:</strong><br>
+            {% for lang, names in country.name.nativeName.items %}
+                - {{ names.common }} ({{ lang }})<br>
+            {% endfor %}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
